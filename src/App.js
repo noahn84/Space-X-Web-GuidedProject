@@ -14,7 +14,7 @@ export default function App() {
     setIsFetchingData(true);
     fetchMissions()
       .then(res => {
-        console.log(res);
+        // console.log(res);
         setIsFetchingData(false);
         setMissions(res.data);
       })
@@ -28,6 +28,7 @@ export default function App() {
       <h1>Space Missions</h1>
       <MissionForm getData={getData} isFetchingData={isFetchingData} />
       <MissionsList error={error} missions={missions} />
+      {/* map (in MissionsList) doesn't work because missions are initially set to an empty array, and errors are initially set to an empty string */}
     </div>
   );
 }
